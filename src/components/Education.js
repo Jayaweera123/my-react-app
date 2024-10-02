@@ -10,26 +10,22 @@ const Education = () => {
   const educationData = [
     {
       institution: 'University of Moratuwa',
-      degree: 'Bachelor of Technology - BTech, Computer Science and Engineering',
-      period: 'May 2021 - present',
-      grade: '3.86 CGPA',
-      description: `I am currently pursuing a Bachelor's degree in Information Technology at the University of Moratuwa. I have completed 6 semesters and have maintained a CGPA of 8.86. My coursework includes subjects such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks, among others.`,
+      degree: 'Bachelor of Science - BSc, Information Technology',
+      period: 'May 2022 - present',
+      description: `I am currently pursuing a Bachelor's degree in Information Technology at the University of Moratuwa. I have completed 6 semesters and have maintained a CGPA of 3.26. My coursework includes subjects such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks, among others.`,
       logo: uom,
     },
     {
       institution: 'Institute for Java Software Engineering - IJSE',
       degree: 'Comprehensive Master in Java Development',
       period: '2021 - 2022',
-      grade: 'Best performance in all projects',
       description: `I completed the Comprehensive Master in Java Development (CMJD) at the Institute for Java Software Engineering (IJSE). During this program, I gained in-depth knowledge of various Java concepts and worked on several projects that enhanced my practical skills and understanding of Java development.`,
       logo: nenasala,
     },
     {
       institution: 'Bandaranayake Collage, Gampaha',
-      degree: 'High School Diploma',
       period: 'Feb 2010 - Nov 2019',
-      grade: 'Advanced Level bio stream',
-      description: `I completed my school education at Banadaranayake Collage Gampaha, where I achieved outstanding academic results, securing 8A1B  in my Ordinary Level (OL) examinations and BBC in the Biology stream in my Advanced Level (AL) examinations. Throughout my school years, I excelled not only academically but also in various extracurricular activities. I served as a prefect, demonstrating leadership and responsibility, and actively participated in numerous school events and initiatives, showcasing my dedication and enthusiasm in every aspect of school life.`,
+      description: `I completed my school education at Banadaranayake Collage Gampaha, where I achieved outstanding academic results, securing 8A1B  in my Ordinary Level (OL) examinations and BBC in the Biology stream in my Advanced Level (AL) examinations. Throughout my school years, I excelled not only academically but also in various extracurricular activities. I was actively participated in numerous school events and initiatives, showcasing my dedication and enthusiasm in every aspect of school life.`,
       logo: bc,
     },
   ];
@@ -54,7 +50,7 @@ const Education = () => {
                   <span className="timeline-period">{item.period}</span>
                 </div>
                 <div className="timeline-body">
-                  <p><strong>Grade: </strong>{item.grade}</p>
+                 
                   <p>{item.description}</p>
                 </div>
               </div>

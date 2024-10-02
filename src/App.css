@@ -153,8 +153,8 @@ span.navbar-text {
 }
 .navbar-text button {
   font-weight: 700;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #691d89;
+  border: 1px solid  #691d89;
   padding: 18px 34px;
   font-size: 18px;
   margin-left: 18px;
@@ -170,7 +170,7 @@ span.navbar-text {
   width: 0%;
   height: 100%;
   position: absolute;
-  background-color: #fff;
+  background-color:  #691d89;
   left: 0;
   top: 0;
   z-index: -1;
@@ -230,6 +230,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
+.navbar-brand-text {
+  font-weight: bold;
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+.purple-text {
+  color: #691d89;
+}
+
+.white-text {
+  color: white; /* Adjust to the desired shade of purple */
+}
+
+
 
 /************ Banner Css ************/
 .banner {
@@ -274,12 +288,74 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   align-items: center;
 }
+
+
+/* Button Wrapper */
+.button-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/* Connect Button */
+.banner .connect-button {
+  color: #fff;
+  font-weight: 700;
+  font-size: 36px;
+  margin-top: 60px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6c63ff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
 .banner button svg {
   font-size: 25px;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
   line-height: 1;
 }
+/* Gradient Button */
+.gradient-button {
+  background: linear-gradient(to right,#b43a84 , #691d89); /* Gradient from rose to pink */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 36px;
+  cursor: pointer;
+  border-radius: 50px; /* Rounded corners */
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the text horizontally */
+  text-align: center; /* Ensure text is centered */
+  min-width: 280px; /* Adjust the minimum width */
+  height: 80px; /* Adjust the height */
+  text-decoration: none;
+}
+.banner a {
+  text-decoration: none; /* Remove underline from all links */
+}
+
+/* Hover Effect for Gradient Button */
+.gradient-button:hover {
+  background: linear-gradient(to right, #b43a84 , #691d89); /* Reverse gradient on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+.gradient-button {
+  min-width: 260px; /* Adjust the minimum width */
+  height: 70px; /* Adjust the height */
+}
+
+
+
+
 .banner button:hover svg {
   margin-left: 25px;
 }
@@ -306,8 +382,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .animate__fadeIn {
   animation-duration: 0.5s;
 }
-
-/************ Skills Css ************/
+/************ Skills CSS ************/
 .skill {
   padding: 0 0 50px 0;
   position: relative;
@@ -320,15 +395,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: -60px;
 }
 .skill h2 {
-	font-size: 45px;
-	font-weight: 700;
+  font-size: 45px;
+  font-weight: 700;
 }
 .skill p {
-    color: #B8B8B8;
-    font-size: 18px;
-    letter-spacing: 0.8px;
-    line-height: 1.5em;
-    margin: 14px 0 75px 0;
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 75px 0;
 }
 .skill-slider {
   width: 80%;
@@ -345,6 +420,75 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   bottom: 0;
   width: 40%;
   z-index: -4;
+}
+
+/* Updated My Skills Section CSS */
+.my-skills {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-category {
+  background: #1c1c1c;
+  padding: 50px 30px; /* Increase padding for height adjustment */
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(128, 0, 128, 0.4);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.skills-category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(128, 0, 128, 0.7);
+}
+
+/* Icon Styling */
+.skills-icons {
+  display: flex;
+  gap: 15px; /* Increase gap between icons */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px; /* Spacing between title and icons */
+}
+
+.skills-icons img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* White icons on dark background */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    width: 100%;
+  }
+
+  .skills-category {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill h2 {
+    font-size: 36px;
+  }
+  .skills-category h3 {
+    font-size: 20px;
+  }
 }
 
 /************ Projects Css ************/
@@ -684,7 +828,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .new-email-bx::before {
   content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(90.21deg, #b43a84 -5.91%, #691d89 111.58%);
   border-radius: 20px;
   position: absolute;
   z-index: -1;
