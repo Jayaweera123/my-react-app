@@ -116,6 +116,7 @@ span.navbar-text {
 .social-icon {
     display: inline-block;
     margin-left: 14px;
+    width: full;
 }
 .social-icon a {
     width: 42px;
@@ -297,9 +298,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     }
 }
 .txt-rotate > .wrap {
-  border-right: 0.08em solid #ff69b4; /* Change border color to pink */
-  color: #ff69b4; /* Set text color to pink */
-  font-size: 24px;
+  border-right: 0.08em solid #8b1fd3; /* Change border color to pink */
+  color: #8b1fd3; 
+  font-size: 40px;
+  transition: all 0.01s ease-in-out;
 }
 .animate__fadeIn {
   animation-duration: 0.5s;
@@ -542,6 +544,113 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact form button:hover::before {
   width: 100%;
 }
+/************ Education Css ************/
+.education-section {
+  padding: 50px 0;
+  background-color: #111;
+  color: #fff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.timeline-badge {
+  flex: 0 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #8b1fd3;
+  padding: 5px;
+}
+
+.timeline-panel {
+  flex: 1;
+  padding: 20px;
+  background: #222;
+  border-radius: 8px;
+  border-left: 5px solid #8b1fd3;
+  position: relative;
+}
+
+.timeline-heading {
+  margin-bottom: 15px;
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.timeline-degree {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #8b1fd3;
+}
+
+.timeline-period {
+  display: block;
+  font-style: italic;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.timeline-body p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .timeline-badge {
+    margin-bottom: 15px;
+  }
+
+  .timeline-panel {
+    border-left: none;
+  }
+}
+
+
+
+
+
 
 /************ Footer Css ************/
 .footer {
