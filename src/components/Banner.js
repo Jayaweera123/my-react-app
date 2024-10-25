@@ -63,7 +63,7 @@ export const Banner = () => {
                   <p>
                     Passionate and skilled undergraduate seeking a software engineering internship to apply and explore emerging technologies. A responsible team player with strong leadership qualities, adaptability, and a focus on achieving productive goals.
                   </p>
-                  <a href="https://firebasestorage.googleapis.com/v0/b/protfolio-42d87.appspot.com/o/protfolio%2FHappy%20Children%20Day.png?alt=media&token=f23059e0-fa9c-43e4-8863-0574887caa9e" target="_blank" rel="noopener noreferrer">
+                  <a href="https://firebasestorage.googleapis.com/v0/b/protfolio-42d87.appspot.comgs://protfolio-42d87.appspot.com/protfolio/Ravindu Jayaweera.pdf">
                     <button className="gradient-button">
                       Check Resume
                     </button>

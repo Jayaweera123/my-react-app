@@ -386,6 +386,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill {
   padding: 0 0 50px 0;
   position: relative;
+  padding-top: 300px;
 }
 .skill-bx {
   background: #151515;
@@ -422,6 +423,42 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+
+.skills-category {
+  text-align: center;
+}
+
+.skills-category h3 {
+  font-size: 32px; /* Increase font size */
+  font-weight: bold; /* Make it bold */
+  margin-bottom: 30px; /* Add gap between heading and icons */
+}
+
+.skills-columns {
+  display: flex;
+  justify-content: center;
+  gap: 90px; /* Adjust spacing between columns */
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Adjust spacing between items in a column */
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-item span {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+
 /* Updated My Skills Section CSS */
 .my-skills {
   margin-top: 50px;
@@ -447,7 +484,23 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   box-shadow: 0 4px 8px rgba(128, 0, 128, 0.4);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the icon and text */
+  text-align: center;
+}
 
+
+.icon {
+  font-size: 48px; /* Enlarge the icons */
+  margin-bottom: 10px; /* Space between the icon and the text */
+}
+
+.skill-item span {
+  font-size: 16px; /* Adjust the text size */
+  margin-top: 5px;
+}
 /* Hover Effect */
 .skills-category:hover {
   transform: translateY(-10px);
@@ -463,13 +516,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: 20px; /* Spacing between title and icons */
 }
 
-.skills-icons img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  filter: brightness(0) invert(1); /* White icons on dark background */
+.icon {
+  font-size: 48px; /* Enlarge the icons */
+  margin-bottom: 10px; /* Space between the icon and the text */
 }
 
+.skill-item span {
+  font-size: 16px; /* Adjust the text size */
+  margin-top: 5px;
+}
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .skills-grid {
@@ -624,13 +679,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .contact img {
   width: 92%;
+  height: 50%;
 }
+.contact p {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
 .contact h2 {
-	font-size: 45px;
-	font-weight: 700;
+  font-size: 60px;
+  font-weight: 700;
   margin-bottom: 30px;
 }
-.contact form input, .contact form textarea {
+
+.contact form input,
+.contact form textarea {
   width: 100%;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -643,19 +706,125 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.8px;
   transition: 0.3s ease-in-out;
 }
-.contact form input:focus, .contact form textarea:focus {
-  background: rgba(255, 255, 255, 1);
+
+.contact form input:focus,
+.contact form textarea:focus {
+  background: #fff(208, 37, 37);
   color: #121212;
 }
-.contact form input::placeholder, .contact form textarea::placeholder {
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
   font-size: 16px;
   font-weight: 400;
   color: #fff;
 }
-.contact form input:focus::placeholder, .contact form textarea:focus::placeholder {
+
+/* Basic Info Box */
+.basic-info h3 {
+  font-size: 48px; /* Change this value to enlarge the text */
+  color: #4a2fbd; /* Optional: Change the color of the text */
+  margin-bottom: 20px; /* Optional: Adjust the bottom margin for spacing */
+}
+
+/* Hover effect for the h3 */
+.basic-info h3 {
+  font-size: 48px; /* Change this value to enlarge the text */
+  color: #4a2fbd; /* Optional: Change the color of the text */
+  margin-bottom: 20px; /* Optional: Adjust the bottom margin for spacing */
+}
+
+/* Hover effect for the h3 */
+.basic-info h3:hover {
+  color: #aa367c; /* Change color on hover */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+
+.basic-info {
+  background-color: rgba(249, 249, 249, 0.8); /* Make the background slightly transparent */
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  min-width: auto;
+}
+
+/* Hover Effect for Basic Info */
+.basic-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: rgba(249, 249, 249, 1); /* Background becomes solid on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .basic-info {
+    margin-top: 20px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .basic-info {
+    margin-top: 15px;
+    padding: 10px;
+  }
+}
+
+/* Icons before each info item */
+.basic-info p {
+  font-size: 32px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center; /* Align icon with text */
+}
+
+/* Increase the gap between icon and text */
+.basic-info p i {
+  margin-right: 20px; /* Increase the gap between icon and text */
+  color: #4a2fbd; /* Icon color */
+  font-size: 24px; /* Adjust the size of the icons if needed */
+}
+
+/* Hover effect for text */
+.basic-info p:hover {
+  color: #aa367c;
+  cursor: pointer; /* Adding cursor pointer for better hover feedback */
+}
+
+.basic-info p {
+  font-size: 28px; /* Adjust text size if needed */
+  display: flex;
+  color: #4a2fbd;
+  align-items: center; /* Ensures the icon and text align vertically */
+  margin-bottom: 10px; /* Space between each row */
+}
+
+/* Enlarge "Ravindu Jayaweera" text */
+.basic-info p strong {
+  font-size: 42px; /* Enlarge the name */
+  color: #4a2fbd; /* Set color */
+}
+.basic-info p svg {
+  margin-right: 20px; /* Adds gap between the FontAwesomeIcon and the text */
+  color: #4a2fbd; /* Icon color */
+}
+
+
+
+/* Hover effect for enlarged text */
+.basic-info p strong:hover {
+  color: #aa367c; /* Change color on hover */
+}
+
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder {
   color: #121212;
   opacity: 0.8;
 }
+
 .contact form button {
   font-weight: 700;
   color: #000;
@@ -667,16 +836,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
   transition: 0.3s ease-in-out;
 }
+
 .contact form button span {
   z-index: 1;
   position: relative;
 }
+
 .contact form button:hover {
   color: #fff;
 }
+
 .contact form button::before {
   content: "";
-  background: #121212;
+  background: #8b1fd3;
   width: 0;
   height: 100%;
   position: absolute;
@@ -685,9 +857,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: 0;
   transition: 0.3s ease-in-out;
 }
+
 .contact form button:hover::before {
   width: 100%;
 }
+
+
 /************ Education Css ************/
 .education-section {
   padding: 50px 0;
