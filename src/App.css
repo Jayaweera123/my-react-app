@@ -381,15 +381,85 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .animate__fadeIn {
   animation-duration: 0.5s;
+}  
+
+
+/************ Services CSS ************/
+.services {
+  padding: 0 0 50px 0;
+  position: relative;
+  padding-top: 100px;
+
 }
+
+.services .skill-bx {
+  background: #530d4f27;
+  border-radius: 64px;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.services h2 {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.services p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 75px 0;
+}
+
+.skill-slider {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.skill-slider .item {
+  margin: 0 30px; /* Add horizontal margin to increase gap between items */
+}
+
+.skill-slider .item img {
+  width: 50%;
+  margin: 0 auto 15px auto;
+}
+
+.background-image-left {
+  top: 70%;
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  z-index: -4;
+  height: max-content;
+}
+
+.background-image-right {
+  top: 28%; /* Adjust top position as needed */
+  position: absolute;
+  right: 20%;
+  bottom: 0;
+  width: 50%; /* Adjust width as needed */
+  z-index: -4; /* Ensure it's behind other content */
+  height: max-content; /* Ensure it takes the minimum space needed */
+   /* Reduce opacity to lessen intensity */
+}
+
+
 /************ Skills CSS ************/
 .skill {
   padding: 0 0 50px 0;
   position: relative;
-  padding-top: 300px;
+  padding-top: 100px;
 }
 .skill-bx {
-  background: #151515;
+  background: #530d4f27;
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
@@ -410,6 +480,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 80%;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  gap: 80px; /* Increases gap between items */
+  overflow: hidden;
 }
 .skill-slider .item img {
   width: 50%;

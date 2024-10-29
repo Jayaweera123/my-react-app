@@ -2,6 +2,7 @@ import React from 'react';
 import { FaReact, FaNodeJs, FaJava, FaBlender, FaHotjar } from 'react-icons/fa';
 import { SiAngular, SiNextdotjs, SiJavascript, SiMysql, SiDotnet, SiMongodb, SiTailwindcss, SiCodeblocks, SiCanva, SiVisualstudio, SiFigma, SiPostman, SiCsharp } from 'react-icons/si';
 import { BsBootstrap } from 'react-icons/bs';
+import colorSharp from "../assets/img/color-sharp.png";
 
 export const Skills = () => {
   return (
@@ -155,6 +156,7 @@ export const Skills = () => {
           </div>
         </div>
       </div>
+      <img className="background-image-left" src={colorSharp} alt="Background" />
     </section>
   );
 };
