@@ -1,25 +1,23 @@
 import { useState } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Modal, Button } from "react-bootstrap";
 import myImage from "../assets/img/MyImage.png"; // Import your image here
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import emailjs from 'emailjs-com'; // Import EmailJS
+import emailjs from 'emailjs-com';
 
 export const Contact = () => {
   const formInitialDetails = {
-    firstName: '',
-    lastName: '',
+    Name: '',
     email: '',
-    phone: '',
-    subject: '', // Added subject field to the form details
     message: ''
   };
   
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
   const [status, setStatus] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
@@ -32,28 +30,27 @@ export const Contact = () => {
     e.preventDefault();
     setButtonText("Sending...");
     
-    // Use EmailJS to send email
     emailjs.send(
-      'service_jpsnpr8', // Your EmailJS service ID
-      'template_7x2sopd', // Your EmailJS template ID
+      'service_rjimhnb', // Your EmailJS service ID
+      'template_753xbhi', // Your EmailJS template ID
       {
-        from_name: formDetails.firstName,
+        from_name: formDetails.Name,
         from_email: formDetails.email,
-        phone: formDetails.phone,
-        subject: formDetails.subject,
         message: formDetails.message
       },
-      'your_public_key' // Replace with your EmailJS public key
+      'a3lYensrYyYrAdK9n' // Replace with your actual EmailJS public key
     )
     .then((result) => {
       console.log(result.text);
       setButtonText("Send");
       setFormDetails(formInitialDetails);
       setStatus({ success: true, message: 'Message sent successfully' });
+      setShowModal(true); // Show success modal
     }, (error) => {
       console.log(error.text);
       setButtonText("Send");
       setStatus({ success: false, message: 'Something went wrong, please try again later.' });
+      setShowModal(true); // Show failure modal
     });
   };
 
@@ -77,7 +74,7 @@ export const Contact = () => {
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   
                   {/* Basic Info Section */}
-                  <Card className="basic-info mb-4">
+                  <Card className="mb-4 basic-info">
                     <Card.Body>
                       <h3><strong>Ravindu Jayaweera</strong></h3>
                       <p><FontAwesomeIcon icon={faMapMarkerAlt} /> Gampaha, Sri Lanka</p>
@@ -93,9 +90,9 @@ export const Contact = () => {
                       <Col xs={12} className="px-1">
                         <input 
                           type="text" 
-                          value={formDetails.firstName} 
+                          value={formDetails.Name} 
                           placeholder="Name" 
-                          onChange={(e) => onFormUpdate('firstName', e.target.value)} 
+                          onChange={(e) => onFormUpdate('Name', e.target.value)} 
                         />
                       </Col>
 
@@ -109,24 +106,6 @@ export const Contact = () => {
                       </Col>
 
                       <Col xs={12} className="px-1">
-                        <input 
-                          type="tel" 
-                          value={formDetails.phone} 
-                          placeholder="Phone No." 
-                          onChange={(e) => onFormUpdate('phone', e.target.value)} 
-                        />
-                      </Col>
-
-                      <Col xs={12} className="px-1">
-                        <input 
-                          type="text" 
-                          value={formDetails.subject} 
-                          placeholder="Subject" 
-                          onChange={(e) => onFormUpdate('subject', e.target.value)} 
-                        />
-                      </Col>
-
-                      <Col xs={12} className="px-1">
                         <textarea 
                           rows="6" 
                           value={formDetails.message} 
@@ -135,14 +114,6 @@ export const Contact = () => {
                         </textarea>
                         <button type="submit"><span>{buttonText}</span></button>
                       </Col>
-
-                      {
-                        status.message && (
-                          <Col xs={12}>
-                            <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                          </Col>
-                        )
-                      }
                     </Row>
                   </form>
                 </div>
@@ -151,6 +122,23 @@ export const Contact = () => {
           </Col>
         </Row>
       </Container>
+
+      {/* Popup Modal */}
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>{status.success ? "Success" : "Error"}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p style={{ fontSize: '1.1em', color: status.success ? "green" : "red" }}>
+            {status.message}
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </section>
   );
 };

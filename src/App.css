@@ -288,6 +288,30 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   align-items: center;
 }
+.gradient-button {
+  background: linear-gradient(to right, #b43a84, #691d89); /* Gradient from rose to pink */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 36px;
+  cursor: pointer;
+  border-radius: 50px; /* Rounded corners */
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the text horizontally */
+  text-align: center; /* Ensure text is centered */
+  min-width: 280px; /* Adjust the minimum width */
+  height: 80px; /* Adjust the height */
+  text-decoration: none;
+}
+
+.gradient-button:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+
 
 
 /* Button Wrapper */
@@ -341,6 +365,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .banner a {
   text-decoration: none; /* Remove underline from all links */
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+  color: #fff;
+  background-color: #0f4325; /* Adjust color to match your theme */
+  border: none;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #08471a; /* Slightly darker shade on hover */
 }
 
 /* Hover Effect for Gradient Button */

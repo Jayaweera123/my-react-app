@@ -3,12 +3,17 @@ import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { Button } from "./Button";
+import { getDownloadURL, ref } from 'firebase/storage';
+import storage from "../config/firebase";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(100); // Speed up the typing effect
+  const [delta, setDelta] = useState(100);
+  const [resume, setResume] = useState(null);
+
   const toRotate = ["IT Undergraduate", "Full Stack Developer", "UI/UX Designer", "Programmer"];
   const period = 1000;
 
@@ -20,6 +25,12 @@ export const Banner = () => {
     return () => clearInterval(ticker);
   }, [text]);
 
+  useEffect(() => {
+    getDownloadURL(ref(storage, 'Resume.pdf')).then((url) => {
+      setResume(url);
+    });
+  }, []);
+
   const tick = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
@@ -30,21 +41,20 @@ export const Banner = () => {
     setText(updatedText);
 
     if (isDeleting) {
-      setDelta(50); // Speed up deleting
+      setDelta(50);
     }
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      setDelta(period); // Pause before deleting
+      setDelta(period);
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setDelta(100); // Restore the typing speed
+      setDelta(100);
     }
   };
 
   return (
-    // Add the id="Banner" to the section
     <section className="banner" id="Banner">
       <Container>
         <Row className="align-items-center">
@@ -53,8 +63,8 @@ export const Banner = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <h1>
-                    <span>{`Hi, I am `}</span><br/>
-                    <span style={{ fontWeight: 'bold' }}>Ravindu Jayaweera</span><br/>
+                    <span>{`Hi, I am `}</span><br />
+                    <span style={{ fontWeight: 'bold' }}>Ravindu Jayaweera</span><br />
                     <span>{` I am a `}</span>
                     <span className="txt-rotate">
                       <span className="wrap">{text}</span>
@@ -63,11 +73,7 @@ export const Banner = () => {
                   <p>
                     Passionate and skilled undergraduate seeking a software engineering internship to apply and explore emerging technologies. A responsible team player with strong leadership qualities, adaptability, and a focus on achieving productive goals.
                   </p>
-                  <a href="https://firebasestorage.googleapis.com/v0/b/protfolio-42d87.appspot.comgs://protfolio-42d87.appspot.com/protfolio/Ravindu Jayaweera.pdf">
-                    <button className="gradient-button">
-                      Check Resume
-                    </button>
-                  </a>
+                  <Button resume={resume} />
                 </div>
               }
             </TrackVisibility>
