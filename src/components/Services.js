@@ -67,19 +67,19 @@ export const Services = () => {
                 <div className="item">
                   <img src={meter1} alt="Web Development" />
                   <h5>Web Development</h5>
-                  <p>Crafting responsive, high-performance websites tailored to your business needs. From concept to launch, we build web solutions that engage users and drive growth.</p>
+                  <p>High-performance websites tailored to your business needs. From concept to launch, we build web solutions that engage users and drive growth.</p>
                 </div>
                 
                 <div className="item">
                   <img src={meter2} alt="Mobile App Development" />
                   <h5>Mobile App Development</h5>
-                  <p>Developing custom mobile applications that provide a seamless user experience across devices. We bring your ideas to life with robust, scalable, and innovative app solutions.</p>
+                  <p>Developing custom mobile applications that provide a seamless user experience across devices. We bring your ideas to life with innovative app solutions.</p>
                 </div>
                 
                 <div className="item">
                   <img src={meter3} alt="UI/UX Designing" />
                   <h5>UI/UX Designing</h5>
-                  <p>Designing intuitive and aesthetically pleasing interfaces that enhance user experience. We focus on user-centered designs that combine functionality with a seamless look and feel.</p>
+                  <p>Designing intuitive and aesthetically pleasing interfaces that enhance user experience. We focus on user-centered designs that delivers seamless look and feel.</p>
                 </div>
                 
               </Carousel>

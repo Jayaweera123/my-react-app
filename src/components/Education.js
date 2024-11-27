@@ -16,10 +16,10 @@ const Education = () => {
       logo: uom,
     },
     {
-      institution: 'Institute for Java Software Engineering - IJSE',
-      degree: 'Comprehensive Master in Java Development',
+      institution: 'Nenasala Information Communication Education Center - Miriswatte',
+      degree: 'Diploma in Information & Communication Technology',
       period: '2021 - 2022',
-      description: `I completed the Comprehensive Master in Java Development (CMJD) at the Institute for Java Software Engineering (IJSE). During this program, I gained in-depth knowledge of various Java concepts and worked on several projects that enhanced my practical skills and understanding of Java development.`,
+      description: `I completed the Diploma in Information & Communication Technology  at the Nenasala Information & Communication Education Technology Center. During this program, I gained in-depth knowledge of Information Technology and worked on several projects that enhanced my practical skills and understanding of IT concepts.`,
       logo: nenasala,
     },
     {

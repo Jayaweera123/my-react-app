@@ -237,10 +237,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .purple-text {
   color: #691d89;
+  font-size: 32px;
 }
 
 .white-text {
-  color: white; /* Adjust to the desired shade of purple */
+  color: white;
+  font-size: 32px; /* Adjust to the desired shade of purple */
 }
 
 
@@ -462,6 +464,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
   display: flex;
   overflow: hidden;
+  text-align: center;
+  
 }
 
 .skill-slider .item {
@@ -718,10 +722,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project-card .github-link {
   display: flex;
   align-items: center;
+  margin-bottom: 40px;
+  margin-left: 10px;
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.6rem;
   gap: 8px; /* Space between icon and text */
 }
 
@@ -741,6 +747,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 6px 12px;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 40px;
+  margin-right: 10px;
   transition: background 0.3s;
 }
 
@@ -754,11 +762,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(128, 0, 128, 0.5), 0 12px 24px rgba(255, 20, 147, 0.4);
+  box-shadow: 0 8px 16px rgba(26, 2, 26, 0.5), 0 12px 24px rgba(255, 20, 147, 0.4);
 }
 
 .project-card:hover .project-content h4 {
-  color: #800080; /* Changes title color on hover */
+  color: #911f91; /* Changes title color on hover */
 }
 
 .project-card:hover .more-details-btn {
@@ -825,7 +833,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /* Content Area */
 .project-card .project-content {
-  padding: 16px;
+  padding: 4px;
   flex: 1;
 }
 
@@ -854,18 +862,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
   padding: 80px 0;
   position: relative;
-  background: linear-gradient(45deg, #710437, #4b0372);
+  background: linear-gradient(45deg, #650431, #480156);
 }
 .project h2 {
 	font-size: 45px;
 	font-weight: 800;
   text-align: center;
-  margin-top: 2px;
+  padding-top: 2px;
   margin-bottom: 15px;
 }
 
-.project {
-  padding: 40px 0;
+.project p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 10px 0 20px 0;
   text-align: center;
 }
 
@@ -1084,18 +1096,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .section-title {
+  font-size: 45px;
+	font-weight: 800;
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  padding-top: 2px;
+  margin-bottom: 15px;
 }
 
 .section-description {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 10px 0 20px 0;
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .education-timeline {

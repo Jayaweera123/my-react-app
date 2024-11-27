@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
+import img1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img1.png";
@@ -12,7 +12,7 @@ export const Projects = () => {
     {
       title: "Ascendia",
       description: "Second Year Software Project - MERN Stack - Full Stack Developer.",
-      imgUrl: projImg1,
+      imgUrl: img1,
     },
     {
       title: "Expl",
