@@ -676,7 +676,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border: 1px solid #ddd;
   border-radius: 2px;
   box-shadow: 0 4px 8px rgba(128, 0, 128, 0.3), 0 8px 16px rgba(255, 20, 147, 0.3);
-  background-color: #fff;
+  background-color: rgba(20, 3, 3, 0.733)b5b;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Ensures footer is at the bottom */
@@ -701,16 +701,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project-card h4 {
   font-size: 2rem;
   margin-bottom: 4px;
-  color: #333;
+  font-weight: 700;
+  color: #f1e9f2f6;
   text-align: left; /* Align project name to the left */
+  margin-left: 10px;
 }
 /*Project description of project card*/
 .project-card p {
   font-size: 1rem;
   color: #555;
   margin-bottom: 8px;
-  text-align: left; /* Align description to the left */
-  flex: 1; /* Allow the description to take up remaining space */
+  text-align: left !important; /* Align description to the left */
+  flex: 1;
+  margin-left: 10px !important; /* Allow the description to take up remaining space */
 }
 .project-card .project-footer {
   display: flex;
@@ -725,7 +728,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-bottom: 40px;
   margin-left: 10px;
   text-decoration: none;
-  color: #333;
+  color: #ede1e1e7;
   font-weight: bold;
   font-size: 1.6rem;
   gap: 8px; /* Space between icon and text */
@@ -736,7 +739,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .project-card .github-link:hover {
-  color: #6e5494; /* GitHub purple */
+  color: #1c1725; /* GitHub purple */
 }
 
 .project-card .more-details-btn {
@@ -750,6 +753,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-bottom: 40px;
   margin-right: 10px;
   transition: background 0.3s;
+  padding: 12px 20px;
+  
 }
 
 .project-card .more-details-btn:hover {
@@ -762,11 +767,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(26, 2, 26, 0.5), 0 12px 24px rgba(255, 20, 147, 0.4);
+  box-shadow: 0 8px 16px rgba(30, 21, 30, 0.5), 0 12px 24px rgba(255, 20, 147, 0.4);
 }
 
 .project-card:hover .project-content h4 {
-  color: #911f91; /* Changes title color on hover */
+  color: #c9a7c971; /* Changes title color on hover */
 }
 
 .project-card:hover .more-details-btn {
@@ -776,20 +781,23 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project-slider {
   width: 100%; /* Matches the container width */
   overflow: hidden; /* Prevents cards from spilling outside */
-  padding: 0 4px; /* Optional: Add some padding to avoid edges cutting */
+  padding: 0 4px;
+  width: 100%;
+  position: relative;
+  scrollbar-width: none; /* Optional: Add some padding to avoid edges cutting */
 }
+.project-slider::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+
 
 .project-cards-wrapper {
   display: flex;
-  animation: scroll-left 15s linear infinite;
-  gap: 16px; /* Add a uniform gap of 16px between cards */
+  gap: 16px; /* Space between project cards */
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;/* Add a uniform gap of 16px between cards */
 }
-
-
-
-
-
-
 /* Keyframes for continuous leftward scrolling */
 @keyframes scroll-left {
   0% {
@@ -810,20 +818,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
-
 /* Reset animation for seamless looping */
 .project-cards-wrapper {
-  will-change: transform; /* Optimize performance */
+  display: flex;
+  gap: 16px; /* Space between cards */
+  animation: scroll-left 20s linear infinite;
 }
 
 
 /* Card Animation */
-@keyframes card-hover-animation {
-  from {
-    transform: scale(1);
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
   }
-  to {
-    transform: scale(1.05);
+  100% {
+    transform: translateX(-100%);
   }
 }
 
@@ -833,7 +842,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /* Content Area */
 .project-card .project-content {
-  padding: 4px;
+  padding: 8px;
   flex: 1;
 }
 

@@ -1,69 +1,98 @@
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import img1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
-import projImg4 from "../assets/img/project-img1.png";
-import projImg5 from "../assets/img/project-img2.png";
-import projImg6 from "../assets/img/project-img3.png";
+import I1 from "../assets/img/I1.png";
+import I6 from "../assets/img/I6.png";
+import I4 from "../assets/img/I4.jpg";
+import I7 from "../assets/img/I7.png";
+import I5 from "../assets/img/I5.png";
+import I3 from "../assets/img/I3.png";
+import I2 from "../assets/img/I2.png";
 
 export const Projects = () => {
   const projects = [
     {
-      title: "Ascendia",
+      title: "I - FOODZ",
       description: "Second Year Software Project - MERN Stack - Full Stack Developer.",
-      imgUrl: img1,
+      imgUrl: I6,
+      githubLink: "https://github.com/example/i-foodz",
     },
     {
-      title: "Expl",
-      description: "E-visa Issuing System - Frontend Developer.",
-      imgUrl: projImg2,
+      title: "Trip Eka",
+      description: "Seats Booking System for Annual TripE.",
+      imgUrl: I4,
+      githubLink: "https://github.com/example/trip-eka",
     },
     {
-      title: "NeoMove",
-      description: "Devthon winning application.",
-      imgUrl: projImg3,
+      title: "Ascendia",
+      description: "Second Year Software Project.",
+      imgUrl: I1,
+      githubLink: "https://github.com/Jayaweera123/Ascendia-",
     },
     {
-      title: "TaskManager Pro",
-      description: "A task management tool for boosting productivity.",
-      imgUrl: projImg4,
+      title: "Learn Wave",
+      description: "A Student management system for tuition classes.",
+      imgUrl: I3,
+      githubLink: "https://github.com/Jayaweera123/LearnWave",
     },
     {
-      title: "HealthEase",
-      description: "Healthcare management system to track patient data and appointments.",
-      imgUrl: projImg5,
+      title: "Learn Wave - Mobile",
+      description: "A Student management App for tuition classes.",
+      imgUrl: I2,
+      githubLink: "https://github.com/example/learn-wave-mobile",
+    },
+    {
+      title: "My Portfolio",
+      description: "React Frontend.",
+      imgUrl: I5,
+      githubLink: "https://github.com/example/my-portfolio",
     },
     {
       title: "Highway Tracking System",
-      description: "A collaborative platform for developers to share and review code.",
-      imgUrl: projImg6,
+      description: "1st year Hardware project.",
+      imgUrl: I7,
+      githubLink: "https://github.com/example/highway-tracking-system",
     },
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    }, 3000); // Automatically slide every 3 seconds
+    return () => clearInterval(interval);
+  }, [projects.length]);
+
+  const sliderStyle = {
+    display: "flex",
+    transition: "transform 0.5s ease-in-out",
+    transform: `translateX(-${currentIndex * 300}px)`, // 300px is the width of each card
+  };
+
   return (
     <section className="project" id="projects">
-    <Container>
-      <Row>
-        <Col size={12}>
-          <h2>Projects</h2>
-          <p>My experience as an IT Undergraduate and SE Enthusiast.</p>
-          <div className="project-slider">
-            <div className="project-cards-wrapper">
-              {projects.concat(projects).map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  imgUrl={project.imgUrl}
-                  githubLink={project.githubLink}
-                />
-              ))}
+      <Container>
+        <Row>
+          <Col size={12}>
+            <h2>Projects</h2>
+            <p>My experience as an IT Undergraduate and SE Enthusiast.</p>
+            <div className="project-slider">
+              <div className="project-cards-wrapper" style={sliderStyle}>
+                {projects.map((project, index) => (
+                  <ProjectCard
+                    key={index}
+                    title={project.title}
+                    description={project.description}
+                    imgUrl={project.imgUrl}
+                    githubLink={project.githubLink}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        </Col>
-      </Row>
-    </Container>
-  </section>
-  )
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
 };
